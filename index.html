@@ -26,11 +26,26 @@
             <span> Jeremy Robson </span>
           </h1>
         </div>
-        <div>
-          <button class="toggle-btn">Daily</button>
-          <button>Weekly</button>
-          <button>Monthly</button>
-        </div>
+        <section class="toggle-btn-group" role="radiogroup">
+          <div class="toggle-btn">
+            <input
+              id="daily"
+              type="radio"
+              name="timeframe"
+              value="daily"
+              checked
+            />
+            <label for="daily">Daily</label>
+          </div>
+          <div class="toggle-btn">
+            <input id="weekly" type="radio" name="timeframe" value="weekly" />
+            <label for="weekly">Weekly</label>
+          </div>
+          <div class="toggle-btn">
+            <input id="monthly" type="radio" name="timeframe" value="monthly" />
+            <label for="monthly">Monthly</label>
+          </div>
+        </section>
       </section>
     </article>
   </body>

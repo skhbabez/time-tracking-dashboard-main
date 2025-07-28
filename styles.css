@@ -19,17 +19,19 @@ img {
 }
 
 :root {
-  --purple-600: hsl(246, 80%, 60%);
   --orange-300: hsl(15, 100%, 70%);
   --blue-300: hsl(195, 74%, 62%);
   --pink-400: hsl(348, 100%, 68%);
   --green-400: hsl(145, 58%, 55%);
   --purple-700: hsl(264, 64%, 52%);
+  --purple-600: hsl(246, 80%, 60%);
+  --purple-500: hsl(235, 45%, 61%);
   --yellow-300: hsl(43, 84%, 65%);
   --navy-950: hsl(226, 43%, 10%);
   --navy-900: hsl(235, 46%, 20%);
   --navy-800: hsl(235, 41%, 34%);
   --navy-200: hsl(236, 100%, 87%);
+  --grey: hsl(0, 0%, 85%);
   --font-step-1: 0.9375rem; /*15px*/
   --font-step-2: 1.125rem; /*18px*/
   --font-step-3: 1.5rem; /*24px*/
@@ -46,9 +48,30 @@ body {
   background-color: var(--navy-950);
   font-size: var(--font-step-2);
   font-family: var(--font-base);
+  font-weight: var(--font-regular);
   color: white;
 }
 
 h1 {
   font-size: var(--font-step-3);
+}
+
+.toggle-btn-group {
+  display: flex;
+  justify-content: space-around;
+}
+
+.toggle-btn {
+  &label {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  input {
+    &[type="radio"] {
+      display: none;
+    }
+    &[type="radio"]:checked + label {
+      color: var(--purple-500);
+    }
+  }
 }
