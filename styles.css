@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  src: local("Rubik"),
+    url("fonts/Rubik-VariableFont_wght.ttf") format("truetype");
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  inline-size: 100%;
+  display: block;
+}
+
+:root {
+  --purple-600: hsl(246, 80%, 60%);
+  --orange-300: hsl(15, 100%, 70%);
+  --blue-300: hsl(195, 74%, 62%);
+  --pink-400: hsl(348, 100%, 68%);
+  --green-400: hsl(145, 58%, 55%);
+  --purple-700: hsl(264, 64%, 52%);
+  --yellow-300: hsl(43, 84%, 65%);
+  --navy-950: hsl(226, 43%, 10%);
+  --navy-900: hsl(235, 46%, 20%);
+  --navy-800: hsl(235, 41%, 34%);
+  --navy-200: hsl(236, 100%, 87%);
+  --font-step-1: 0.9375rem; /*15px*/
+  --font-step-2: 1.125rem; /*18px*/
+  --font-step-3: 1.5rem; /*24px*/
+  --font-step-4: 2rem; /*32px*/
+  --font-step-5: 2.5rem; /*40px*/
+  --font-step-6: 3.5rem; /*56px*/
+  --font-base: "Rubik", "sans-serif";
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+}
+
+body {
+  background-color: var(--navy-950);
+  font-size: var(--font-step-2);
+  font-family: var(--font-base);
+  color: white;
+}
+
+h1 {
+  font-size: var(--font-step-3);
+}
