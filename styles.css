@@ -130,7 +130,7 @@ h2 {
   }
 }
 
-.time-card {
+.time-card-main {
   border-radius: inherit;
   background-color: var(--navy-900);
   width: 100%;
@@ -138,7 +138,7 @@ h2 {
   inset: auto 0px 0 0; /* Modern way to position */
 }
 
-.time-card-bg {
+.time-card {
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -152,27 +152,27 @@ h2 {
   border-radius: 15px;
 }
 
-.time-card-bg[data-type="work"] {
+.time-card[data-type="work"] {
   --time-card-image: var(--work-img);
   --time-card-color: var(--orange-300);
 }
-.time-card-bg[data-type="play"] {
+.time-card[data-type="play"] {
   --time-card-image: var(--play-img);
   --time-card-color: var(--blue-300);
 }
-.time-card-bg[data-type="study"] {
+.time-card[data-type="study"] {
   --time-card-image: var(--study-img);
   --time-card-color: var(--pink-400);
 }
-.time-card-bg[data-type="exercise"] {
+.time-card[data-type="exercise"] {
   --time-card-image: var(--exercise-img);
   --time-card-color: var(--green-400);
 }
-.time-card-bg[data-type="social"] {
+.time-card[data-type="social"] {
   --time-card-image: var(--social-img);
   --time-card-color: var(--purple-700);
 }
-.time-card-bg[data-type="self-care"] {
+.time-card[data-type="self-care"] {
   --time-card-image: var(--self-care-img);
   --time-card-color: var(--yellow-300);
 }
