@@ -42,6 +42,12 @@ img {
   --font-light: 300;
   --font-regular: 400;
   --font-medium: 500;
+  --space-8: 0.5rem;
+  --space-24: 1.5rem;
+  --space-32: 2rem;
+  --space-64: 4rem;
+  --space-54: 3.375rem;
+  --corner-radius: 0.5rem;
 }
 
 body {
@@ -54,24 +60,59 @@ body {
 
 h1 {
   font-size: var(--font-step-3);
+  font-weight: var(--font-light);
+}
+
+.report-card {
+  background-color: var(--navy-900);
+  border-radius: var(--corner-radius);
+  overflow: hidden;
+}
+
+.report-card header {
+  display: flex;
+  gap: var(--space-24);
+  align-items: center;
+  border-radius: inherit;
+  background-color: var(--purple-600);
+  padding: var(--space-32);
+  img {
+    max-inline-size: var(--space-64);
+    border-radius: 50%;
+    outline: white solid 3px;
+  }
+}
+.user-info {
+  p {
+    color: var(--navy-200);
+    font-size: var(--font-step-1);
+    font-weight: var(--font-regular);
+  }
+
+  h1 {
+    margin-block-start: var(--space-8);
+  }
 }
 
 .toggle-btn-group {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: var(--space-54);
+  padding: var(--space-24);
 }
 
 .toggle-btn {
-  &label {
+  & label {
     font-size: inherit;
     font-weight: inherit;
+    color: var(--purple-500);
   }
   input {
     &[type="radio"] {
       display: none;
     }
     &[type="radio"]:checked + label {
-      color: var(--purple-500);
+      color: white;
     }
   }
 }

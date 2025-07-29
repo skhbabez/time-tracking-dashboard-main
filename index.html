@@ -16,37 +16,43 @@
     <script defer src="main.js"></script>
   </head>
   <body>
-    <main></main>
-    <article>
-      <section class="report-card">
-        <div>
-          <img src="images/image-jeremy.png" alt="" />
-          <h1>
-            <span>Report for </span>
-            <span> Jeremy Robson </span>
-          </h1>
-        </div>
-        <section class="toggle-btn-group" role="radiogroup">
-          <div class="toggle-btn">
-            <input
-              id="daily"
-              type="radio"
-              name="timeframe"
-              value="daily"
-              checked
-            />
-            <label for="daily">Daily</label>
-          </div>
-          <div class="toggle-btn">
-            <input id="weekly" type="radio" name="timeframe" value="weekly" />
-            <label for="weekly">Weekly</label>
-          </div>
-          <div class="toggle-btn">
-            <input id="monthly" type="radio" name="timeframe" value="monthly" />
-            <label for="monthly">Monthly</label>
-          </div>
+    <main>
+      <article class="report">
+        <section class="report-card">
+          <header>
+            <img src="images/image-jeremy.png" alt="" height="64" width="64" />
+            <div class="user-info">
+              <p>Report for</p>
+              <h1>Jeremy Robson</h1>
+            </div>
+          </header>
+          <section class="toggle-btn-group" role="radiogroup">
+            <div class="toggle-btn">
+              <input
+                id="daily"
+                type="radio"
+                name="timeframe"
+                value="daily"
+                checked
+              />
+              <label for="daily">Daily</label>
+            </div>
+            <div class="toggle-btn">
+              <input id="weekly" type="radio" name="timeframe" value="weekly" />
+              <label for="weekly">Weekly</label>
+            </div>
+            <div class="toggle-btn">
+              <input
+                id="monthly"
+                type="radio"
+                name="timeframe"
+                value="monthly"
+              />
+              <label for="monthly">Monthly</label>
+            </div>
+          </section>
         </section>
-      </section>
-    </article>
+      </article>
+    </main>
   </body>
 </html>
