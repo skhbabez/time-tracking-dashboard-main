@@ -1,5 +1,5 @@
 "use strict";
-const reportUrl = `http://127.0.0.1:5500/data.json`;
+const reportUrl = `data.json`;
 
 const reportContainer = document.getElementById("report");
 

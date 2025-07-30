@@ -147,7 +147,7 @@ h2 {
     &[type="radio"]:checked + label {
       color: white;
     }
-    &[type="radio"]:focus + label {
+    &[type="radio"]:focus-visible + label {
       outline: 1px solid var(--navy-200);
       border-radius: 4px;
     }
