@@ -38,13 +38,18 @@ img {
   --font-step-4: 2rem; /*32px*/
   --font-step-5: 2.5rem; /*40px*/
   --font-step-6: 3.5rem; /*56px*/
+  --fluid-32-56: clamp(2rem, 0.5687rem + 6.1069vw, 3.5rem);
+  --fluid-8-24: clamp(0.5rem, 0.1479rem + 1.5023vw, 1.5rem);
+  --fluid-24-32: clamp(1.5rem, 0.9286rem + 1.1905vw, 2rem);
   --font-base: "Rubik", "sans-serif";
   --font-light: 300;
   --font-regular: 400;
   --font-medium: 500;
   --space-8: 0.5rem;
+  --space-21: 1.3125rem;
   --space-24: 1.5rem;
   --space-32: 2rem;
+  --space-40: 2.5rem;
   --space-64: 4rem;
   --space-54: 3.375rem;
   --space-80: 5rem;
@@ -147,7 +152,12 @@ h2 {
   border-radius: inherit;
   background-color: var(--navy-900);
   width: 100%;
-  padding: var(--space-24);
+  padding: var(--fluid-24-32);
+  transition: background-color 100ms ease-in-out;
+}
+
+.time-card-main:hover {
+  background-color: var(--navy-800);
 }
 
 .time-card {
@@ -159,8 +169,9 @@ h2 {
   background-image: var(--time-card-image),
     linear-gradient(var(--time-card-color) 40%, var(--navy-900) 40%);
   background-repeat: no-repeat;
-  background-position: 92% -13%;
-  min-block-size: 10rem;
+  background-size: var(--image-size, 4.125rem), cover;
+  background-position: 92% var(--height-offset, -12%);
+  padding-block-start: 2.375rem;
   border-radius: 15px;
 }
 
@@ -204,7 +215,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-block-start: 8px;
+  margin-block-start: var(--fluid-8-24);
   p:first-child {
     font-size: var(--font-step-4);
     font-weight: var(--font-light);
@@ -212,5 +223,66 @@ h2 {
   p:last-child {
     font-size: var(--font-step-1);
     color: var(--navy-200);
+  }
+}
+
+@media (min-width: 768px) {
+  .report {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .user-card {
+    grid-column: 1 / -1;
+  }
+
+  .time-card {
+    padding-block-start: 2.0625rem;
+    --image-size: 3.3125rem;
+    --height-offset: -6%;
+  }
+
+  .time-card-content {
+    align-items: start;
+    flex-direction: column;
+    gap: var(--space-8);
+    p:first-child {
+      font-size: var(--font-step-6);
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .report {
+    grid-template-columns: repeat(4, minmax(auto, 16rem));
+  }
+
+  .user-card {
+    grid-column: 1 / 1;
+    grid-row: 1 / span 2;
+    display: flex;
+    flex-direction: column;
+    header {
+      flex: 1;
+      flex-direction: column;
+      align-items: baseline;
+      gap: var(--space-40);
+    }
+  }
+  .user-info h1 {
+    margin: 0;
+    font-size: var(--font-step-5);
+  }
+
+  .time-card {
+    padding-block-start: 2.8125rem;
+    --image-size: 4.125rem;
+    --height-offset: -6%;
+  }
+
+  .toggle-btn-group {
+    grid-auto-flow: row;
+    align-items: baseline;
+    justify-items: baseline;
+    gap: 1.3125rem;
   }
 }
