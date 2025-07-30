@@ -239,7 +239,7 @@ h2 {
 
 @media (min-width: 768px) {
   .report {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(14.375rem, 1fr));
   }
 
   .user-card {
