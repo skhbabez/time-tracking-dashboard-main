@@ -1,7 +1,9 @@
 "use strict";
 const reportUrl = `data.json`;
-
 const reportContainer = document.getElementById("report");
+const radioButtons = reportContainer.querySelectorAll(
+  ".toggle-btn-group input[type='radio']"
+);
 
 const populateReport = (report) => {
   const timeFramePhrase = {
@@ -12,7 +14,7 @@ const populateReport = (report) => {
   report.forEach((item) => {
     Object.entries(item.timeframes).forEach(([timeFrame, values]) => {
       const { current, previous } = values;
-      reportContainer.innerHTML += `<section class="time-card" data-type="${item.title
+      const timeCard = `<section class="time-card" data-type="${item.title
         .toLowerCase()
         .replace(" ", "-")}" data-hidden="${
         timeFrame !== "daily"
@@ -33,6 +35,7 @@ const populateReport = (report) => {
                   </div>
                 </div>
               </section>`;
+      reportContainer.insertAdjacentHTML("beforeend", timeCard);
     });
   });
 };
@@ -45,11 +48,10 @@ const populateReport = (report) => {
     }
     const report = await response.json();
     populateReport(report);
-    const dialer = document.getElementById("dialer");
     const timeCards = reportContainer.querySelectorAll(`[data-time]`);
-    dialer.addEventListener("change", (event) => {
-      if (event.target.type === "radio") {
-        const timeFrame = event.target.value;
+    radioButtons.forEach((btn) => {
+      btn.addEventListener("change", (event) => {
+        const timeFrame = event.currentTarget.value;
         timeCards.forEach((item) => {
           if (item.dataset.time !== timeFrame) {
             item.dataset.hidden = "true";
@@ -57,7 +59,7 @@ const populateReport = (report) => {
             item.dataset.hidden = "false";
           }
         });
-      }
+      });
     });
   } catch (error) {
     console.error(`Could not get report: ${error}`);
