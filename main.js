@@ -17,7 +17,7 @@ const populateReport = (report) => {
       const timeCard = `<section class="time-card" data-type="${item.title
         .toLowerCase()
         .replace(" ", "-")}" data-hidden="${
-        timeFrame !== "daily"
+        timeFrame !== "weekly"
       }" data-time="${timeFrame.toLowerCase()}">
                 <div class="time-card-main">
                   <header>
