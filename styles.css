@@ -177,7 +177,7 @@ h2 {
     linear-gradient(var(--time-card-color) 40%, var(--navy-900) 40%);
   background-repeat: no-repeat;
   background-size: var(--image-size, 4.125rem), cover;
-  background-position: 92% var(--height-offset, -12%);
+  background-position: 92% var(--height-offset, -10px);
   padding-block-start: 2.375rem;
   border-radius: var(--corner-radius);
 }
@@ -250,7 +250,7 @@ h2 {
   .time-card {
     padding-block-start: 2.0625rem;
     --image-size: 57.48px;
-    --height-offset: -4%;
+    --height-offset: -8px;
   }
 
   .time-card-content {
@@ -267,6 +267,7 @@ h2 {
   .report {
     display: grid;
     grid-template-columns: repeat(4, minmax(auto, 16rem));
+    grid-auto-rows: minmax(auto, 15.25rem);
     gap: var(--space-32);
   }
 
@@ -275,7 +276,7 @@ h2 {
     grid-row: 1 / span 2;
     display: flex;
     flex-direction: column;
-    height: 520px;
+
     header {
       flex: 1;
       flex-direction: column;
@@ -302,6 +303,7 @@ h2 {
     grid-auto-flow: row;
     align-items: baseline;
     justify-items: baseline;
+    padding: var(--space-32);
     gap: 1.3125rem;
   }
 }
