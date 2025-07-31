@@ -185,27 +185,38 @@ h2 {
 .time-card[data-type="work"] {
   --time-card-image: var(--work-img);
   --time-card-color: var(--orange-300);
+  --image-size: 74px;
+  --height-offset: -10%;
 }
 .time-card[data-type="play"] {
   --time-card-image: var(--play-img);
   --time-card-color: var(--blue-300);
+  --image-size: 76px;
+  --height-offset: -6%;
 }
 .time-card[data-type="study"] {
   --time-card-image: var(--study-img);
   --time-card-color: var(--pink-400);
+  --image-size: 76px;
+  --height-offset: -6%;
 }
 .time-card[data-type="exercise"] {
   --time-card-image: var(--exercise-img);
   --time-card-color: var(--green-400);
-  --height-offset: 0%;
+  --height-offset: -1%;
+  --image-size: 79px;
 }
 .time-card[data-type="social"] {
   --time-card-image: var(--social-img);
   --time-card-color: var(--purple-700);
+  --height-offset: -25%;
+  --image-size: 74px;
 }
 .time-card[data-type="self-care"] {
   --time-card-image: var(--self-care-img);
   --time-card-color: var(--yellow-300);
+  --height-offset: -14%;
+  --image-size: 67px;
 }
 
 .time-card[data-hidden="true"] {
@@ -249,8 +260,6 @@ h2 {
 
   .time-card {
     padding-block-start: 2.0625rem;
-    --image-size: 57.48px;
-    --height-offset: -8px;
   }
 
   .time-card-content {
@@ -260,6 +269,31 @@ h2 {
     p:first-child {
       font-size: var(--font-step-6);
     }
+  }
+
+  .time-card[data-type="work"] {
+    --image-size: 60px;
+    --height-offset: -6%;
+  }
+  .time-card[data-type="play"] {
+    --image-size: 59px;
+    --height-offset: -4%;
+  }
+  .time-card[data-type="study"] {
+    --image-size: 60px;
+    --height-offset: -4%;
+  }
+  .time-card[data-type="exercise"] {
+    --image-size: 60px;
+    --height-offset: -1%;
+  }
+  .time-card[data-type="social"] {
+    --image-size: 58px;
+    --height-offset: -10%;
+  }
+  .time-card[data-type="self-care"] {
+    --image-size: 50px;
+    --height-offset: -6%;
   }
 }
 
@@ -295,7 +329,30 @@ h2 {
 
   .time-card {
     padding-block-start: 2.8125rem;
-    --image-size: 78px;
+  }
+
+  .time-card[data-type="work"] {
+    --image-size: 77px;
+    --height-offset: -7%;
+  }
+  .time-card[data-type="play"] {
+    --image-size: 76px;
+    --height-offset: -4%;
+  }
+  .time-card[data-type="study"] {
+    --image-size: 76px;
+    --height-offset: -4%;
+  }
+  .time-card[data-type="exercise"] {
+    --image-size: 76px;
+    --height-offset: -1%;
+  }
+  .time-card[data-type="social"] {
+    --image-size: 70px;
+    --height-offset: -10%;
+  }
+  .time-card[data-type="self-care"] {
+    --image-size: 62px;
     --height-offset: -6%;
   }
 
