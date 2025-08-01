@@ -4,6 +4,7 @@ const reportContainer = document.getElementById("report");
 const radioButtons = reportContainer.querySelectorAll(
   ".toggle-btn-group input[type='radio']"
 );
+let timeCards = [];
 
 const populateReport = (report) => {
   const timeFramePhrase = {
@@ -40,6 +41,20 @@ const populateReport = (report) => {
   });
 };
 
+const toggleTimeCards = (timeFrame) => {
+  timeCards.forEach((item) => {
+    if (item.dataset.time !== timeFrame) {
+      item.dataset.hidden = "true";
+    } else {
+      item.dataset.hidden = "false";
+    }
+  });
+};
+
+const handleChange = (event) => {
+  toggleTimeCards(event.currentTarget.value);
+};
+
 (async () => {
   try {
     const response = await fetch(reportUrl);
@@ -48,18 +63,9 @@ const populateReport = (report) => {
     }
     const report = await response.json();
     populateReport(report);
-    const timeCards = reportContainer.querySelectorAll(`[data-time]`);
+    timeCards = reportContainer.querySelectorAll(`[data-time]`);
     radioButtons.forEach((btn) => {
-      btn.addEventListener("change", (event) => {
-        const timeFrame = event.currentTarget.value;
-        timeCards.forEach((item) => {
-          if (item.dataset.time !== timeFrame) {
-            item.dataset.hidden = "true";
-          } else {
-            item.dataset.hidden = "false";
-          }
-        });
-      });
+      btn.addEventListener("change", handleChange);
     });
   } catch (error) {
     console.error(`Could not get report: ${error}`);
